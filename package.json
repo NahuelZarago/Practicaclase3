@@ -1,0 +1,32 @@
+{
+  "name": "practica-firebase-cicd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Repo base - Práctica de Programación Avanzada: CI/CD con Firebase Hosting (preview channels) y hardening de headers HTTP",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "serve": "firebase emulators:start --only hosting",
+    "emuladores": "firebase emulators:start --only auth,firestore --project demo-resenas",
+    "test:reglas": "firebase emulators:exec --only firestore --project demo-resenas \"node --test tests/\"",
+    "deploy:preview": "firebase hosting:channel:deploy local-test --expires 1d"
+  },
+  "dependencies": {
+    "firebase": "^12.0.0",
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "firebase-tools": "^15.34.1",
+    "typescript": "^5.9"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
