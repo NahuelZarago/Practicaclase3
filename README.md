@@ -1,13 +1,5 @@
 # Práctica · CI/CD con Firebase Hosting y hardening de headers HTTP
 
-**Programación Avanzada** · Duración: 60 minutos · Plan Firebase **Spark** (sin tarjeta de crédito)
-
-Este repo es el punto de partida. La app (un catálogo de cursos hecho con Next.js en modo
-export estático) **ya funciona**: no hay que programar features. El trabajo es construir el
-camino a producción y endurecer la seguridad de lo que se sirve.
-
-> El enunciado completo, el cronograma y la rúbrica están en el documento de la práctica
-> que entrega la cátedra. Este README es la guía rápida técnica.
 
 ---
 
@@ -167,14 +159,6 @@ tests de reglas (`tests/reglas.test.mjs`) y la CSP con `https://firestore.google
 
 ## Requisitos
 Node.js 24.12+ (por `@firebase/rules-unit-testing@6`) y Java 21+ (emulador de Firestore).
-
-## Desarrollo local
-```bash
-npm install            # instala firebase y @firebase/rules-unit-testing; actualiza package-lock.json
-npm run emuladores     # terminal 1: Auth + Firestore (UI en http://127.0.0.1:4000)
-npm run dev            # terminal 2: http://localhost:3000/cursos (usa los emuladores)
-npm run typecheck && npm run test:reglas   # terminal 3
-```
 
 ## Producción
 1. Firebase Console → Firestore Database → crear base (Standard, modo producción) y
